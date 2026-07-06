@@ -462,24 +462,86 @@ function MeetingRequestForm() {
   };
 
   if (submitted) {
+    const saidYes = answer.startsWith("YES");
+  
+    if (saidYes) {
+      return (
+        <div className="relative flex min-h-[480px] flex-col items-center justify-center overflow-hidden py-8 text-center">
+          <div className="absolute inset-0 pointer-events-none">
+            <span className="success-heart success-heart-1">♥</span>
+            <span className="success-heart success-heart-2">♥</span>
+            <span className="success-heart success-heart-3">♥</span>
+            <span className="success-heart success-heart-4">♥</span>
+            <span className="success-heart success-heart-5">♥</span>
+          </div>
+  
+          <div className="relative z-10">
+            <div className="yes-heart mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-rose-100 text-5xl text-rose-600 shadow-xl shadow-rose-200/50">
+              ♥
+            </div>
+  
+            <p className="mt-7 text-xs font-semibold uppercase tracking-[0.3em] text-rose-500">
+              You Said Yes
+            </p>
+  
+            <h3 className="mt-4 font-serif text-4xl leading-tight text-rose-950">
+              Then I guess
+              <br />
+              I'll see you soon. ❤️
+            </h3>
+  
+            <div className="mx-auto mt-7 max-w-sm rounded-[2rem] border border-rose-200 bg-white/60 px-6 py-7 shadow-lg shadow-rose-950/10 backdrop-blur">
+              <p className="font-serif text-2xl leading-relaxed text-rose-950">
+                I'll be in
+                <span className="mx-2 font-semibold text-rose-700">
+                  Bareilly
+                </span>
+                on the
+                <span className="mx-2 font-semibold text-rose-700">
+                  9th
+                </span>
+                ...
+              </p>
+  
+              <p className="mt-5 font-serif text-3xl text-rose-800">
+                See you soon!! ❤️
+              </p>
+            </div>
+  
+            <p className="mx-auto mt-7 max-w-xs leading-7 text-rose-900/65">
+              And maybe, for a little while, we can just be
+              <span className="font-medium text-rose-800">
+                {" "}
+                you and me again.
+              </span>
+            </p>
+  
+            <p className="mt-7 text-3xl heart-beat">
+              ♥
+            </p>
+          </div>
+        </div>
+      );
+    }
+  
     return (
       <div className="py-6 text-center">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-rose-100 text-4xl">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-rose-100 text-4xl text-rose-600">
           ♥
         </div>
-
+  
         <h3 className="mt-6 font-serif text-3xl text-rose-950">
           I heard you.
         </h3>
-
+  
         <p className="mt-5 leading-7 text-rose-900/70">
           Thank you for giving me an honest answer.
         </p>
-
+  
         <p className="mt-4 leading-7 text-rose-900/70">
           I won't use this little website to argue with your choice.
         </p>
-
+  
         <p className="mt-5 font-medium text-rose-800">
           I just wanted the courage to ask. ❤️
         </p>
@@ -983,6 +1045,85 @@ function App() {
           background: rgba(190, 18, 60, 0.25);
           border-radius: 999px;
         }
+
+        .yes-heart {
+  animation: yes-heart-beat 1.2s ease-in-out infinite;
+}
+
+@keyframes yes-heart-beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.1);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+.success-heart {
+  position: absolute;
+  color: rgba(244, 63, 94, 0.18);
+  animation: success-heart-float 6s ease-in-out infinite;
+}
+
+.success-heart-1 {
+  left: 5%;
+  top: 10%;
+  font-size: 28px;
+  animation-delay: 0s;
+}
+
+.success-heart-2 {
+  right: 8%;
+  top: 18%;
+  font-size: 20px;
+  animation-delay: 1s;
+}
+
+.success-heart-3 {
+  left: 12%;
+  bottom: 15%;
+  font-size: 18px;
+  animation-delay: 2s;
+}
+
+.success-heart-4 {
+  right: 12%;
+  bottom: 10%;
+  font-size: 32px;
+  animation-delay: 0.5s;
+}
+
+.success-heart-5 {
+  left: 48%;
+  top: 3%;
+  font-size: 16px;
+  animation-delay: 1.5s;
+}
+
+@keyframes success-heart-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(8deg);
+  }
+}
       `}</style>
     </div>
   );
