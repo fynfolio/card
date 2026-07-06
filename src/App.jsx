@@ -208,10 +208,28 @@ const cards = [
       </>
     ),
   },
+{
+  id: "I-checked",
+  number: "08",
+  title: "I checked something",
+  subtitle: "Please read this and try to understand.",
+  buttonName: "Sorry ",
+  content: (
+    <>
+      <p>
+        I checked with Arushi that day when you left
+      </p>
 
+      <p className="font-medium text-rose-800">
+        if you were with her or not, I'm sorry. I was messed up and my brain was frozen
+        thinking that there's something as we did talked to hide no more things. I am sorry
+      </p>
+    </>
+  ),  
+},
   {
     id: "no-pressure",
-    number: "08",
+    number: "09",
     title: "Before The Last Card",
     subtitle: "Please read this part slowly.",
     buttonName: "Read This First",
@@ -230,7 +248,7 @@ const cards = [
 
   {
     id: "one-last-question",
-    number: "09",
+    number: "10",
     title: "One Honest Question",
     subtitle: "No arguments. No pressure. Just one conversation.",
     buttonName: "Open My Question",
